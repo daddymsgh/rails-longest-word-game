@@ -1,0 +1,9 @@
+<h1>New game</h1>
+<p><%= @random_letters %></p>
+<p>What is the longest word that you can make ?</p>
+<form action="<%= score_path %>" method="post" data-turbo="false">
+  <input class="form-control" class="form-control" type="text" name="word">
+  <input class="btn btn-secondary mt-3" type="submit" value="Play">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @random_letters %>
+</form>
